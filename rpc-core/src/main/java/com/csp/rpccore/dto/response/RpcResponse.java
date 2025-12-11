@@ -12,14 +12,14 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @Data
-public class RPCResponse<T> implements Serializable {
+public class RpcResponse<T> implements Serializable {
     private String requestID;
     private String msg;
     private int code;
     private T Data;
 
-    public static <T> RPCResponse<T> success(String requestID, T data, RpcRespState state) {
-        RPCResponse<T> RPCResponse = new RPCResponse<>();
+    public static <T> RpcResponse<T> success(String requestID, T data, RpcRespState state) {
+        RpcResponse<T> RPCResponse = new RpcResponse<>();
         RPCResponse.setData(data);
         RPCResponse.setCode(state.getCode());
         RPCResponse.setMsg(state.getMsg());
@@ -27,8 +27,8 @@ public class RPCResponse<T> implements Serializable {
         return RPCResponse;
     }
 
-    public static <T> RPCResponse<T> success(String requestID, T data) {
-        RPCResponse<T> RPCResponse = new RPCResponse<>();
+    public static <T> RpcResponse<T> success(String requestID, T data) {
+        RpcResponse<T> RPCResponse = new RpcResponse<>();
         RPCResponse.setData(data);
         RPCResponse.setCode(RpcRespState.SUCCESS.getCode());
         RPCResponse.setMsg(RpcRespState.SUCCESS.getMsg());
@@ -36,8 +36,8 @@ public class RPCResponse<T> implements Serializable {
         return RPCResponse;
     }
 
-    public static <T> RPCResponse<T> success(String requestID, T data, String msg) {
-        RPCResponse<T> RPCResponse = new RPCResponse<>();
+    public static <T> RpcResponse<T> success(String requestID, T data, String msg) {
+        RpcResponse<T> RPCResponse = new RpcResponse<>();
         RPCResponse.setData(data);
         RPCResponse.setCode(RpcRespState.SUCCESS.getCode());
         RPCResponse.setMsg(msg);
@@ -45,24 +45,24 @@ public class RPCResponse<T> implements Serializable {
         return RPCResponse;
     }
 
-    public static <T> RPCResponse<T> fail(String requestID, RpcRespState state) {
-        RPCResponse<T> RPCResponse = new RPCResponse<>();
+    public static <T> RpcResponse<T> fail(String requestID, RpcRespState state) {
+        RpcResponse<T> RPCResponse = new RpcResponse<>();
         RPCResponse.setCode(state.getCode());
         RPCResponse.setMsg(state.getMsg());
         RPCResponse.setRequestID(requestID);
         return RPCResponse;
     }
 
-    public static <T> RPCResponse<T> fail(String requestID, String msg) {
-        RPCResponse<T> RPCResponse = new RPCResponse<>();
+    public static <T> RpcResponse<T> fail(String requestID, String msg) {
+        RpcResponse<T> RPCResponse = new RpcResponse<>();
         RPCResponse.setCode(RpcRespState.FAIL.getCode());
         RPCResponse.setMsg(msg);
         RPCResponse.setRequestID(requestID);
         return RPCResponse;
     }
 
-    public static <T> RPCResponse<T> fail(String requestID) {
-        RPCResponse<T> RPCResponse = new RPCResponse<>();
+    public static <T> RpcResponse<T> fail(String requestID) {
+        RpcResponse<T> RPCResponse = new RpcResponse<>();
         RPCResponse.setCode(RpcRespState.FAIL.getCode());
         RPCResponse.setMsg(RpcRespState.FAIL.getMsg());
         RPCResponse.setRequestID(requestID);
