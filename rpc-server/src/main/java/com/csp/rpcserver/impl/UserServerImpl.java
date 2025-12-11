@@ -1,4 +1,4 @@
-package com.csp.rpcclient.impl;
+package com.csp.rpcserver.impl;
 
 import com.csp.rpcapi.User;
 import com.csp.rpcapi.UserService;
