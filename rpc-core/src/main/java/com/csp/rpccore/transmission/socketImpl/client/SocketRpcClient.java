@@ -3,6 +3,7 @@ package com.csp.rpccore.transmission.socketImpl.client;
 import com.csp.rpccore.dto.request.RpcRequest;
 import com.csp.rpccore.dto.response.RpcResponse;
 import com.csp.rpccore.transmission.RpcClient;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.ObjectInputStream;
@@ -10,10 +11,11 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 @Slf4j
+@NoArgsConstructor
 public class SocketRpcClient implements RpcClient {
 
     private String address = "127.0.0.1";
-    private int port = 8088;
+    private int port = 8080;
 
     public SocketRpcClient(String address, int port) {
         this.address = address;
