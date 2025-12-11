@@ -16,7 +16,7 @@ public class Mian {
         String interfaceName = "com.csp.rpcapi.UserService";
         String serviceName = interfaceName + version + group;
         RpcRequest rpcRequest = RpcRequest.builder()
-                .reqID(UUID.randomUUID().toString())
+                .requestID(UUID.randomUUID().toString())
                 .group(group)
                 .version(version)
                 .interfaceName("com.csp.rpcapi.UserService")
