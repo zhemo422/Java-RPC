@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Data
 public class RpcRequest implements Serializable {
     private static final long serialVersion = 1L;
-    private String reqID;
+    private String requestID;
     private String methodName;
     private String group;
     private String version;

@@ -22,7 +22,7 @@ public class SocketHandler implements Runnable {
             RpcRequest rpcReq = (RpcRequest) inputStream.readObject();
             Object data = rpcHandler.invoke(rpcReq);
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
-            RpcResponse<?> rpcResp = RpcResponse.success(rpcReq.getReqID(), data);
+            RpcResponse<?> rpcResp = RpcResponse.success(rpcReq.getRequestID(), data);
             outputStream.writeObject(rpcResp);
             outputStream.flush();
     }
