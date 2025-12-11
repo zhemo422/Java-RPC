@@ -1,8 +1,8 @@
 package com.csp.rpccore.transmission;
 
-import com.csp.rpccore.dto.request.RPCRequest;
-import com.csp.rpccore.dto.response.RPCResponse;
+import com.csp.rpccore.dto.request.RpcRequest;
+import com.csp.rpccore.dto.response.RpcResponse;
 
 public interface RpcClient {
-    RPCResponse<?> sentReq(RPCRequest rpcRequest);
+    RpcResponse<?> sentReq(RpcRequest rpcRequest);
 }
